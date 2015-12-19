@@ -22,11 +22,18 @@
 #define addressKey @"address"
 #define avatarKey @"avatar"
 
+#define maxItems 20
+
 @interface StudentViewController ()<StudentDetailViewControllerDelegate,UISearchBarDelegate>
 {
     NSMutableArray *studentArr;
     NSInteger pageNumber;
      NSMutableArray *searchResults;
+    
+    int recordCount;
+    int pageCount;
+    int recordsPerPage;
+    int currentPage;
     
 }
 @end
@@ -67,9 +74,41 @@
     
 }
 
-
+- (void)countRecords {
+    PFQuery *query = [PFQuery queryWithClassName:@"Student"];
+    // Other query parameters assigned here...
+    [query countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
+        // Do better error handling in your app...
+        recordCount = count;
+        pageCount   = count / maxItems + 1;
+        if (currentPage >= 0 && currentPage < pageCount) {
+            [self loadRecordsForPageIndex:currentPage countPerPage:maxItems];
+            currentPage ++;
+        }
+         [self.tableView.bottomRefreshControl endRefreshing];
+        
+    }];
+}
+- (void)loadRecordsForPageIndex:(NSInteger)pageIndex countPerPage:(NSInteger)count {
+    PFQuery *query = [PFQuery queryWithClassName:@"Student"];
+    // Other query parameters assigned here...
+    query.limit    = maxItems;
+    query.skip     = pageIndex * maxItems;
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        
+        if (objects.count != 0) {
+            [self insertDataAfterQuerying:objects];
+        }
+        
+       
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+}
+    
 -(void)fetchNewData{
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self countRecords];
+    /*
         //query 20 items for each page
         PFQuery *query = [PFQuery queryWithClassName:@"Student" predicate:[self predicateQuery]];
         
@@ -80,9 +119,9 @@
             }
             
             [self.tableView.bottomRefreshControl endRefreshing];
-        }];
+        }];*/
     
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
     
 }
 
@@ -92,16 +131,24 @@
 }
 
 -(void)insertDataAfterQuerying: (NSArray *)newObjects{
+    NSMutableArray *mutableNewObject = [NSMutableArray arrayWithArray:newObjects];
     // Prepare new indexPaths
+    for (PFObject *object in newObjects)
+        for (PFObject *studentObject in studentArr)
+            if ([studentObject[@"objectId"] isEqualToString:object[@"objectId"]])
+                [mutableNewObject removeObject:object];
+    
+
     NSMutableArray *indexPathArr = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i<newObjects.count; i++) {
+    for (NSInteger i = 0; i<mutableNewObject.count; i++) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:studentArr.count+i inSection:0];
         [indexPathArr addObject:indexPath];
     }
     
+    
     if (indexPathArr.count != 0) {
         // Append new objects
-        [studentArr addObjectsFromArray:newObjects];
+        [studentArr addObjectsFromArray:mutableNewObject];
         
         // Add more cells
         [self.tableView insertRowsAtIndexPaths:indexPathArr withRowAnimation:UITableViewRowAnimationRight];
