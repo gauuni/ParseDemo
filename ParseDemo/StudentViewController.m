@@ -9,7 +9,7 @@
 #import "StudentViewController.h"
 #import "StudentCell.h"
 #import "StudentDetailViewController.h"
-
+#import "MBProgressHUD.h"
 #import <Parse/Parse.h>
 #import "SVPullToRefresh.h"
 #import "UIScrollView+BottomRefreshControl.h"
@@ -22,10 +22,12 @@
 #define addressKey @"address"
 #define avatarKey @"avatar"
 
-@interface StudentViewController ()<StudentDetailViewControllerDelegate>
+@interface StudentViewController ()<StudentDetailViewControllerDelegate,UISearchBarDelegate>
 {
     NSMutableArray *studentArr;
     NSInteger pageNumber;
+     NSMutableArray *searchResults;
+    
 }
 @end
 
@@ -33,10 +35,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     studentArr = [[NSMutableArray alloc] init];
-
     
-    
+   
     self.title = @"Students";
     
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(button_Add_Tapped)];
@@ -47,7 +49,7 @@
     [self setUpHandlerForPullToRefreshWithTableView:self.tableView];
     
     //Get first page
-    [self.tableView triggerPullToRefresh];
+     [self fetchNewData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,7 +69,7 @@
 
 
 -(void)fetchNewData{
-
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         //query 20 items for each page
         PFQuery *query = [PFQuery queryWithClassName:@"Student" predicate:[self predicateQuery]];
         
@@ -80,7 +82,7 @@
             [self.tableView.bottomRefreshControl endRefreshing];
         }];
     
- 
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     
 }
 
@@ -134,15 +136,24 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return studentArr.count;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [searchResults count];
+        
+    } else {
+         return studentArr.count;
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     StudentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    PFObject *studentObject = [studentArr objectAtIndex:indexPath.row];
-    
+    PFObject *studentObject = nil;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        studentObject = [searchResults objectAtIndex:indexPath.row];
+    } else {
+        studentObject = [studentArr objectAtIndex:indexPath.row];
+    }
     cell.imageView_Avatar.image = nil;
     if (studentObject[avatarKey]) {
         PFFile *imageAvatar = studentObject[avatarKey];
@@ -156,8 +167,7 @@
     cell.label_Email.text = [NSString stringWithFormat:@"Emal: %@",studentObject[emailKey]];
     cell.label_Phone.text = [NSString stringWithFormat:@"Phone: %@", studentObject[phoneKey]];
     cell.label_Address.text = [NSString stringWithFormat:@"Address %@", studentObject[addressKey]];
-    
-    
+
     return cell;
 }
 
@@ -192,35 +202,24 @@
     }
 }
 
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    StudentCell *cell = (StudentCell *)sender;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    NSIndexPath *indexPath = nil;
     StudentDetailViewController *studentDetailVC = (StudentDetailViewController *)segue.destinationViewController;
+
+    if (self.searchDisplayController.active) {
+        indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+        studentDetailVC.studentObject = [searchResults objectAtIndex:indexPath.row];
+    } else {
+        indexPath = [self.tableView indexPathForSelectedRow];
+       studentDetailVC.studentObject = [studentArr objectAtIndex:indexPath.row];
+    }
     studentDetailVC.delegate = self;
-    studentDetailVC.studentObject = [studentArr objectAtIndex:indexPath.row];
 }
 
 -(void)didCompleteWithObject:(PFObject *)studentObject{
-    
     if ([studentArr containsObject:studentObject]) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[studentArr indexOfObject:studentObject] inSection:0];
         [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -231,5 +230,20 @@
     }
     
 }
-
+#pragma mark - Search Delegate
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
+    
+    searchResults = [studentArr filteredArrayUsingPredicate:resultPredicate];
+}
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    
+    return YES;
+}
 @end
