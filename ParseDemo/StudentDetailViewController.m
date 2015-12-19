@@ -8,7 +8,7 @@
 
 #import "StudentDetailViewController.h"
 #import <ParseUI/ParseUI.h>
-
+#import "Common.h"
 #define rowIdKey @"rowId"
 #define firstNameKey @"firstName"
 #define lastNameKey @"lastName"
@@ -75,15 +75,15 @@
 
 -(IBAction)button_Done_Tapped:(id)sender{
     [self.view endEditing:YES];
-    if (!_studentObject[rowIdKey]) {
-        PFQuery *query = [PFQuery queryWithClassName:@"RowsNumber"];
-        PFObject *rowsNumberObject = [query getFirstObject];
-        int rowsNumber = [rowsNumberObject[@"rowsNumber"] intValue] + 1;
-        rowsNumberObject[@"rowsNumber"] = [NSNumber numberWithInt:rowsNumber];
-        _studentObject[rowIdKey] = [NSNumber numberWithInt:rowsNumber];
-        
-        [rowsNumberObject save];
-    }
+//    if (!_studentObject[rowIdKey]) {
+//        PFQuery *query = [PFQuery queryWithClassName:@"RowsNumber"];
+//        PFObject *rowsNumberObject = [query getFirstObject];
+//        int rowsNumber = [rowsNumberObject[@"rowsNumber"] intValue] + 1;
+//        rowsNumberObject[@"rowsNumber"] = [NSNumber numberWithInt:rowsNumber];
+//        _studentObject[rowIdKey] = [NSNumber numberWithInt:rowsNumber];
+//        
+//        [rowsNumberObject save];
+//    }
     [_studentObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             [_delegate didCompleteWithObject:_studentObject];
@@ -133,9 +133,9 @@
 #pragma mark - PickerControllerDelegate
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     
-    UIImage *chosenImage =  [self compressImage:info[UIImagePickerControllerOriginalImage]];
+    UIImage *chosenImage =  [Common compressImage:info[UIImagePickerControllerOriginalImage]];
     NSData *imageData = UIImagePNGRepresentation(chosenImage);
-    PFFile *imageFile = [PFFile fileWithName:[NSString stringWithFormat:@"%@.jpg",[self uuidString]] data:imageData];
+    PFFile *imageFile = [PFFile fileWithName:[NSString stringWithFormat:@"%@.jpg",[Common uuidString]] data:imageData];
     _studentObject[avatarKey] = imageFile;
     imageView_Avatar.image = chosenImage;
 
@@ -143,41 +143,7 @@
     
 }
 
-- (UIImage*)compressImage:(UIImage*)image
-{
-    CGSize newSize = CGSizeMake(200, 200);
-    UIGraphicsBeginImageContext( newSize );
-    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
-    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return newImage;
-}
 
--(UIImage*)scaleImage: (UIImage*) sourceImage
-{
-    float oldWidth = sourceImage.size.width;
-    float scaleFactor = 200 / oldWidth;
-    
-    float newHeight = sourceImage.size.height * scaleFactor;
-    float newWidth = oldWidth * scaleFactor;
-    
-    UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
-    [sourceImage drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return newImage;
-}
-
-- (NSString *)uuidString {
-    // Returns a UUID
-    
-    CFUUIDRef uuid = CFUUIDCreate(kCFAllocatorDefault);
-    NSString *uuidString = (__bridge_transfer NSString *)CFUUIDCreateString(kCFAllocatorDefault, uuid);
-    CFRelease(uuid);
-    
-    return uuidString;
-}
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [picker dismissViewControllerAnimated:YES completion:nil];
