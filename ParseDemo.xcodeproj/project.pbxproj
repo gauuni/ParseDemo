@@ -20,8 +20,6 @@
 		6A94F05B1C23C43A00099B9A /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A94F0551C23C43A00099B9A /* ParseFacebookUtilsV4.framework */; settings = {ASSET_TAGS = (); }; };
 		6A94F05C1C23C43A00099B9A /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A94F0561C23C43A00099B9A /* ParseTwitterUtils.framework */; settings = {ASSET_TAGS = (); }; };
 		6A94F05D1C23C43A00099B9A /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A94F0571C23C43A00099B9A /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
-		6A94F0641C23C54900099B9A /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0611C23C54900099B9A /* UIScrollView+SVInfiniteScrolling.m */; settings = {ASSET_TAGS = (); }; };
-		6A94F0651C23C54900099B9A /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0631C23C54900099B9A /* UIScrollView+SVPullToRefresh.m */; settings = {ASSET_TAGS = (); }; };
 		6A94F0691C23C6BD00099B9A /* StudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0681C23C6BD00099B9A /* StudentCell.m */; settings = {ASSET_TAGS = (); }; };
 		6A94F06D1C23C77200099B9A /* StudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F06C1C23C77200099B9A /* StudentViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6A94F06F1C23D52600099B9A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A94F06E1C23D52600099B9A /* AudioToolbox.framework */; };
@@ -34,10 +32,7 @@
 		6A94F07D1C23D54800099B9A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A94F07C1C23D54800099B9A /* SystemConfiguration.framework */; };
 		6A94F07F1C23D54E00099B9A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A94F07E1C23D54E00099B9A /* libz.tbd */; };
 		6A94F0811C23D55400099B9A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A94F0801C23D55400099B9A /* libsqlite3.tbd */; };
-		6A94F0871C23EAE800099B9A /* YALSunnyRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0851C23EAE800099B9A /* YALSunnyRefreshControl.m */; settings = {ASSET_TAGS = (); }; };
-		6A94F0881C23EAE800099B9A /* YALSunnyRefreshControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F0861C23EAE800099B9A /* YALSunnyRefreshControl.xib */; settings = {ASSET_TAGS = (); }; };
 		6A94F08C1C23EDDF00099B9A /* StudentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F08B1C23EDDF00099B9A /* StudentDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
-		6A94F08E1C24EAD200099B9A /* user-small-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F08D1C24EAD200099B9A /* user-small-icon.png */; settings = {ASSET_TAGS = (); }; };
 		6A94F0DE1C24EFEE00099B9A /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0C11C24EFEE00099B9A /* MASCompositeConstraint.m */; settings = {ASSET_TAGS = (); }; };
 		6A94F0DF1C24EFEE00099B9A /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0C41C24EFEE00099B9A /* MASConstraint.m */; settings = {ASSET_TAGS = (); }; };
 		6A94F0E01C24EFEE00099B9A /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0C61C24EFEE00099B9A /* MASConstraintMaker.m */; settings = {ASSET_TAGS = (); }; };
@@ -57,6 +52,9 @@
 		6A94F0F71C24F29F00099B9A /* syllable.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F0F21C24F29F00099B9A /* syllable.csv */; settings = {ASSET_TAGS = (); }; };
 		6A94F0F81C24F29F00099B9A /* title.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F0F31C24F29F00099B9A /* title.csv */; settings = {ASSET_TAGS = (); }; };
 		6A94F0FC1C24F3B000099B9A /* UIScrollView+BottomRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0FB1C24F3B000099B9A /* UIScrollView+BottomRefreshControl.m */; settings = {ASSET_TAGS = (); }; };
+		6A94F1031C24F8EC00099B9A /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F1001C24F8EC00099B9A /* UIScrollView+SVInfiniteScrolling.m */; settings = {ASSET_TAGS = (); }; };
+		6A94F1041C24F8EC00099B9A /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F1021C24F8EC00099B9A /* UIScrollView+SVPullToRefresh.m */; settings = {ASSET_TAGS = (); }; };
+		6A94F1061C24F90700099B9A /* user-small-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F1051C24F90700099B9A /* user-small-icon.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,11 +95,6 @@
 		6A94F0551C23C43A00099B9A /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		6A94F0561C23C43A00099B9A /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
 		6A94F0571C23C43A00099B9A /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		6A94F05F1C23C54900099B9A /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
-		6A94F0601C23C54900099B9A /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
-		6A94F0611C23C54900099B9A /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
-		6A94F0621C23C54900099B9A /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
-		6A94F0631C23C54900099B9A /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		6A94F0671C23C6BD00099B9A /* StudentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentCell.h; sourceTree = "<group>"; };
 		6A94F0681C23C6BD00099B9A /* StudentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentCell.m; sourceTree = "<group>"; };
 		6A94F06B1C23C77200099B9A /* StudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentViewController.h; sourceTree = "<group>"; };
@@ -121,7 +114,6 @@
 		6A94F0861C23EAE800099B9A /* YALSunnyRefreshControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YALSunnyRefreshControl.xib; sourceTree = "<group>"; };
 		6A94F08A1C23EDDF00099B9A /* StudentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentDetailViewController.h; sourceTree = "<group>"; };
 		6A94F08B1C23EDDF00099B9A /* StudentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentDetailViewController.m; sourceTree = "<group>"; };
-		6A94F08D1C24EAD200099B9A /* user-small-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user-small-icon.png"; path = "../../../../../../Users/KhoiNguyen/Downloads/user-small-icon.png"; sourceTree = "<group>"; };
 		6A94F0C01C24EFEE00099B9A /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		6A94F0C11C24EFEE00099B9A /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		6A94F0C21C24EFEE00099B9A /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -159,6 +151,12 @@
 		6A94F0F31C24F29F00099B9A /* title.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = title.csv; sourceTree = "<group>"; };
 		6A94F0FA1C24F3B000099B9A /* UIScrollView+BottomRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+BottomRefreshControl.h"; sourceTree = "<group>"; };
 		6A94F0FB1C24F3B000099B9A /* UIScrollView+BottomRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+BottomRefreshControl.m"; sourceTree = "<group>"; };
+		6A94F0FE1C24F8EC00099B9A /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		6A94F0FF1C24F8EC00099B9A /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		6A94F1001C24F8EC00099B9A /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		6A94F1011C24F8EC00099B9A /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		6A94F1021C24F8EC00099B9A /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		6A94F1051C24F90700099B9A /* user-small-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-small-icon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +223,7 @@
 		6A94F01D1C23C32600099B9A /* ParseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6A94F1051C24F90700099B9A /* user-small-icon.png */,
 				6A94F0891C23EDC800099B9A /* StudentDetailViewController */,
 				6A94F06A1C23C75D00099B9A /* StudentViewController */,
 				6A94F0661C23C6A500099B9A /* StudentCell */,
@@ -234,7 +233,6 @@
 				6A94F02A1C23C32600099B9A /* Assets.xcassets */,
 				6A94F02C1C23C32600099B9A /* LaunchScreen.storyboard */,
 				6A94F02F1C23C32600099B9A /* Info.plist */,
-				6A94F08D1C24EAD200099B9A /* user-small-icon.png */,
 				6A94F0EB1C24F26700099B9A /* Libs */,
 				6A94F0821C23D58200099B9A /* Frameworks */,
 				6A94F01E1C23C32600099B9A /* Supporting Files */,
@@ -279,18 +277,6 @@
 				6A94F0571C23C43A00099B9A /* ParseUI.framework */,
 			);
 			path = "parse-library-1.10.0";
-			sourceTree = "<group>";
-		};
-		6A94F05E1C23C54900099B9A /* SVPullToRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				6A94F05F1C23C54900099B9A /* SVPullToRefresh.h */,
-				6A94F0601C23C54900099B9A /* UIScrollView+SVInfiniteScrolling.h */,
-				6A94F0611C23C54900099B9A /* UIScrollView+SVInfiniteScrolling.m */,
-				6A94F0621C23C54900099B9A /* UIScrollView+SVPullToRefresh.h */,
-				6A94F0631C23C54900099B9A /* UIScrollView+SVPullToRefresh.m */,
-			);
-			path = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
 		6A94F0661C23C6A500099B9A /* StudentCell */ = {
@@ -396,9 +382,9 @@
 		6A94F0EB1C24F26700099B9A /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				6A94F0FD1C24F8EC00099B9A /* SVPullToRefresh */,
 				6A94F0ED1C24F29F00099B9A /* Name Generator */,
 				6A94F0EC1C24F27000099B9A /* BottomRefresh */,
-				6A94F05E1C23C54900099B9A /* SVPullToRefresh */,
 				6A94F0511C23C43A00099B9A /* parse-library-1.10.0 */,
 			);
 			name = Libs;
@@ -434,6 +420,18 @@
 				6A94F0FB1C24F3B000099B9A /* UIScrollView+BottomRefreshControl.m */,
 			);
 			path = "UIScrollView+BottomRefreshControl";
+			sourceTree = "<group>";
+		};
+		6A94F0FD1C24F8EC00099B9A /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				6A94F0FE1C24F8EC00099B9A /* SVPullToRefresh.h */,
+				6A94F0FF1C24F8EC00099B9A /* UIScrollView+SVInfiniteScrolling.h */,
+				6A94F1001C24F8EC00099B9A /* UIScrollView+SVInfiniteScrolling.m */,
+				6A94F1011C24F8EC00099B9A /* UIScrollView+SVPullToRefresh.h */,
+				6A94F1021C24F8EC00099B9A /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,10 +542,9 @@
 				6A94F0E81C24EFEE00099B9A /* LICENSE in Resources */,
 				6A94F02E1C23C32600099B9A /* LaunchScreen.storyboard in Resources */,
 				6A94F02B1C23C32600099B9A /* Assets.xcassets in Resources */,
+				6A94F1061C24F90700099B9A /* user-small-icon.png in Resources */,
 				6A94F0F41C24F29F00099B9A /* name.csv in Resources */,
-				6A94F0881C23EAE800099B9A /* YALSunnyRefreshControl.xib in Resources */,
 				6A94F0291C23C32600099B9A /* Main.storyboard in Resources */,
-				6A94F08E1C24EAD200099B9A /* user-small-icon.png in Resources */,
 				6A94F0F81C24F29F00099B9A /* title.csv in Resources */,
 				6A94F0E91C24EFEE00099B9A /* README in Resources */,
 			);
@@ -576,9 +573,9 @@
 			files = (
 				6A94F0FC1C24F3B000099B9A /* UIScrollView+BottomRefreshControl.m in Sources */,
 				6A94F0E61C24EFEE00099B9A /* View+MASAdditions.m in Sources */,
-				6A94F0641C23C54900099B9A /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				6A94F0691C23C6BD00099B9A /* StudentCell.m in Sources */,
 				6A94F0231C23C32600099B9A /* AppDelegate.m in Sources */,
+				6A94F1041C24F8EC00099B9A /* UIScrollView+SVPullToRefresh.m in Sources */,
 				6A94F0E71C24EFEE00099B9A /* ViewController+MASAdditions.m in Sources */,
 				6A94F0E21C24EFEE00099B9A /* MASViewAttribute.m in Sources */,
 				6A94F0EA1C24EFEE00099B9A /* UIView+TKGeometry.m in Sources */,
@@ -590,11 +587,10 @@
 				6A94F0E51C24EFEE00099B9A /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				6A94F0E11C24EFEE00099B9A /* MASLayoutConstraint.m in Sources */,
 				6A94F0E41C24EFEE00099B9A /* NSArray+MASAdditions.m in Sources */,
-				6A94F0871C23EAE800099B9A /* YALSunnyRefreshControl.m in Sources */,
 				6A94F0F51C24F29F00099B9A /* NameGenerator.m in Sources */,
-				6A94F0651C23C54900099B9A /* UIScrollView+SVPullToRefresh.m in Sources */,
 				6A94F08C1C23EDDF00099B9A /* StudentDetailViewController.m in Sources */,
 				6A94F0E31C24EFEE00099B9A /* MASViewConstraint.m in Sources */,
+				6A94F1031C24F8EC00099B9A /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

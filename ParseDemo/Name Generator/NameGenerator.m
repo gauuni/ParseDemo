@@ -280,4 +280,9 @@
 	return newName;
 }
 
+-(NSString *)getPhoneNumber{
+    NSInteger randomNumber = arc4random() % 999999999;
+    return [NSString stringWithFormat:@"0%i", randomNumber];
+}
+
 @end
