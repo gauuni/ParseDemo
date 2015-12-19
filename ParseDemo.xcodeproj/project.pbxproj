@@ -38,7 +38,6 @@
 		6A94F0881C23EAE800099B9A /* YALSunnyRefreshControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F0861C23EAE800099B9A /* YALSunnyRefreshControl.xib */; settings = {ASSET_TAGS = (); }; };
 		6A94F08C1C23EDDF00099B9A /* StudentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F08B1C23EDDF00099B9A /* StudentDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6A94F08E1C24EAD200099B9A /* user-small-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F08D1C24EAD200099B9A /* user-small-icon.png */; settings = {ASSET_TAGS = (); }; };
-		6A94F0921C24EED200099B9A /* UIScrollView+BottomRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0911C24EED200099B9A /* UIScrollView+BottomRefreshControl.m */; settings = {ASSET_TAGS = (); }; };
 		6A94F0DE1C24EFEE00099B9A /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0C11C24EFEE00099B9A /* MASCompositeConstraint.m */; settings = {ASSET_TAGS = (); }; };
 		6A94F0DF1C24EFEE00099B9A /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0C41C24EFEE00099B9A /* MASConstraint.m */; settings = {ASSET_TAGS = (); }; };
 		6A94F0E01C24EFEE00099B9A /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0C61C24EFEE00099B9A /* MASConstraintMaker.m */; settings = {ASSET_TAGS = (); }; };
@@ -57,6 +56,7 @@
 		6A94F0F61C24F29F00099B9A /* README in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F0F11C24F29F00099B9A /* README */; settings = {ASSET_TAGS = (); }; };
 		6A94F0F71C24F29F00099B9A /* syllable.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F0F21C24F29F00099B9A /* syllable.csv */; settings = {ASSET_TAGS = (); }; };
 		6A94F0F81C24F29F00099B9A /* title.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F0F31C24F29F00099B9A /* title.csv */; settings = {ASSET_TAGS = (); }; };
+		6A94F0FC1C24F3B000099B9A /* UIScrollView+BottomRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0FB1C24F3B000099B9A /* UIScrollView+BottomRefreshControl.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,8 +122,6 @@
 		6A94F08A1C23EDDF00099B9A /* StudentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentDetailViewController.h; sourceTree = "<group>"; };
 		6A94F08B1C23EDDF00099B9A /* StudentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentDetailViewController.m; sourceTree = "<group>"; };
 		6A94F08D1C24EAD200099B9A /* user-small-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user-small-icon.png"; path = "../../../../../../Users/KhoiNguyen/Downloads/user-small-icon.png"; sourceTree = "<group>"; };
-		6A94F0901C24EED200099B9A /* UIScrollView+BottomRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+BottomRefreshControl.h"; sourceTree = "<group>"; };
-		6A94F0911C24EED200099B9A /* UIScrollView+BottomRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+BottomRefreshControl.m"; sourceTree = "<group>"; };
 		6A94F0C01C24EFEE00099B9A /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		6A94F0C11C24EFEE00099B9A /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		6A94F0C21C24EFEE00099B9A /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -159,6 +157,8 @@
 		6A94F0F11C24F29F00099B9A /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		6A94F0F21C24F29F00099B9A /* syllable.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = syllable.csv; sourceTree = "<group>"; };
 		6A94F0F31C24F29F00099B9A /* title.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = title.csv; sourceTree = "<group>"; };
+		6A94F0FA1C24F3B000099B9A /* UIScrollView+BottomRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+BottomRefreshControl.h"; sourceTree = "<group>"; };
+		6A94F0FB1C24F3B000099B9A /* UIScrollView+BottomRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+BottomRefreshControl.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,16 +350,6 @@
 			name = StudentDetailViewController;
 			sourceTree = "<group>";
 		};
-		6A94F08F1C24EED200099B9A /* UIScrollView+BottomRefreshControl */ = {
-			isa = PBXGroup;
-			children = (
-				6A94F0901C24EED200099B9A /* UIScrollView+BottomRefreshControl.h */,
-				6A94F0911C24EED200099B9A /* UIScrollView+BottomRefreshControl.m */,
-			);
-			name = "UIScrollView+BottomRefreshControl";
-			path = "/Users/KhoiNguyen/Downloads/CCBottomRefreshControl-master/UIScrollView+BottomRefreshControl";
-			sourceTree = "<absolute>";
-		};
 		6A94F0BF1C24EFEE00099B9A /* Masonry */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,9 +407,9 @@
 		6A94F0EC1C24F27000099B9A /* BottomRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				6A94F0F91C24F3B000099B9A /* UIScrollView+BottomRefreshControl */,
 				6A94F0BF1C24EFEE00099B9A /* Masonry */,
 				6A94F0D91C24EFEE00099B9A /* UIView+TKGeometry */,
-				6A94F08F1C24EED200099B9A /* UIScrollView+BottomRefreshControl */,
 			);
 			name = BottomRefresh;
 			sourceTree = "<group>";
@@ -435,6 +425,15 @@
 				6A94F0F31C24F29F00099B9A /* title.csv */,
 			);
 			path = "Name Generator";
+			sourceTree = "<group>";
+		};
+		6A94F0F91C24F3B000099B9A /* UIScrollView+BottomRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				6A94F0FA1C24F3B000099B9A /* UIScrollView+BottomRefreshControl.h */,
+				6A94F0FB1C24F3B000099B9A /* UIScrollView+BottomRefreshControl.m */,
+			);
+			path = "UIScrollView+BottomRefreshControl";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -575,10 +574,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A94F0FC1C24F3B000099B9A /* UIScrollView+BottomRefreshControl.m in Sources */,
 				6A94F0E61C24EFEE00099B9A /* View+MASAdditions.m in Sources */,
 				6A94F0641C23C54900099B9A /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				6A94F0691C23C6BD00099B9A /* StudentCell.m in Sources */,
-				6A94F0921C24EED200099B9A /* UIScrollView+BottomRefreshControl.m in Sources */,
 				6A94F0231C23C32600099B9A /* AppDelegate.m in Sources */,
 				6A94F0E71C24EFEE00099B9A /* ViewController+MASAdditions.m in Sources */,
 				6A94F0E21C24EFEE00099B9A /* MASViewAttribute.m in Sources */,
