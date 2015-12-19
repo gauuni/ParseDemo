@@ -22,10 +22,16 @@
 #define addressKey @"address"
 #define avatarKey @"avatar"
 
+#define maxItems 4
 @interface StudentViewController ()<StudentDetailViewControllerDelegate>
 {
     NSMutableArray *studentArr;
     NSInteger pageNumber;
+    
+    int recordCount;
+    int pageCount;
+    int recordsPerPage;
+    int currentPage;
 }
 @end
 
@@ -35,6 +41,8 @@
     [super viewDidLoad];
     studentArr = [[NSMutableArray alloc] init];
 
+    recordCount = pageCount = currentPage = 0;
+    recordsPerPage = maxItems*2;
     
     
     self.title = @"Students";
@@ -68,38 +76,79 @@
 
 -(void)fetchNewData{
 
-        //query 20 items for each page
-        PFQuery *query = [PFQuery queryWithClassName:@"Student" predicate:[self predicateQuery]];
-        
+//        //query 20 items for each page
+//        PFQuery *query = [PFQuery queryWithClassName:@"Student" predicate:[self predicateQuery]];
+//    query.limit = 20;
+//    query.skip =
+//        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+//            
+//            if (objects.count != 0) {
+//                [self insertDataAfterQuerying:objects];
+//            }
+//            
+//            [self.tableView.bottomRefreshControl endRefreshing];
+//        }];
+    
+    [self countRecords];
+    
+}
+
+- (void)countRecords {
+    PFQuery *query = [PFQuery queryWithClassName:@"Student"];
+    // Other query parameters assigned here...
+    [query countObjectsInBackgroundWithBlock:^(int count, NSError *error) {
+        // Do better error handling in your app...
+        recordCount = count;
+        pageCount   = count / maxItems + 1;
+        if (currentPage<pageCount && currentPage>=0)
+        [self loadRecordsForPageIndex:currentPage countPerPage: maxItems];
+         [self.tableView.bottomRefreshControl endRefreshing];
+    }];
+}
+- (void)loadRecordsForPageIndex:(NSInteger)pageIndex countPerPage:(NSInteger)count {
+        PFQuery *query = [PFQuery queryWithClassName:@"Student"];
+        // Other query parameters assigned here...
+        query.limit    = count;
+        query.skip     = pageIndex * count;
         [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
             
             if (objects.count != 0) {
                 [self insertDataAfterQuerying:objects];
             }
-            
-            [self.tableView.bottomRefreshControl endRefreshing];
         }];
-    
- 
-    
+        currentPage++;
 }
 
+
+
 -(NSPredicate *)predicateQuery{
-    NSPredicate *predicate = [NSPredicate predicateWithFormat: [NSString stringWithFormat:@" %@ > %lu AND %@ <= %lu", rowIdKey, (unsigned long)studentArr.count, rowIdKey, (unsigned long)studentArr.count + 20]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat: [NSString stringWithFormat:@" %@ > %lu AND %@ <= %lu", rowIdKey, (unsigned long)studentArr.count, rowIdKey, (unsigned long)studentArr.count + 40]];
     return predicate;
 }
 
 -(void)insertDataAfterQuerying: (NSArray *)newObjects{
+    NSMutableArray *mutableNewObjects = [NSMutableArray arrayWithArray:newObjects];
     // Prepare new indexPaths
+    for (PFObject *object in newObjects){
+        for (PFObject *studentObject in studentArr) {
+            if([studentObject[@"objectId"] isEqualToString:object[@"objectId"]]){
+               [mutableNewObjects removeObject:object];
+            }
+        }
+    }
+    int maximumItems = maxItems;
+    if (mutableNewObjects.count < maxItems) {
+        maximumItems = mutableNewObjects.count;
+    }
     NSMutableArray *indexPathArr = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i<newObjects.count; i++) {
+    for (NSInteger i = 0; i<maximumItems; i++) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:studentArr.count+i inSection:0];
         [indexPathArr addObject:indexPath];
     }
     
     if (indexPathArr.count != 0) {
         // Append new objects
-        [studentArr addObjectsFromArray:newObjects];
+        [studentArr addObjectsFromArray:mutableNewObjects];
         
         // Add more cells
         [self.tableView insertRowsAtIndexPaths:indexPathArr withRowAnimation:UITableViewRowAnimationRight];
@@ -153,7 +202,7 @@
     }
    
     cell.label_Name.text = [NSString stringWithFormat:@"%@ %@", studentObject[firstNameKey], studentObject[lastNameKey]];
-    cell.label_Email.text = [NSString stringWithFormat:@"Emal: %@",studentObject[emailKey]];
+    cell.label_Email.text = [NSString stringWithFormat:@"Email: %@",studentObject[emailKey]];
     cell.label_Phone.text = [NSString stringWithFormat:@"Phone: %@", studentObject[phoneKey]];
     cell.label_Address.text = [NSString stringWithFormat:@"Address %@", studentObject[addressKey]];
     
