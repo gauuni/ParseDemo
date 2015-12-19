@@ -76,15 +76,15 @@
 
 -(IBAction)button_Done_Tapped:(id)sender{
     [self.view endEditing:YES];
-    if (!_studentObject[rowIdKey]) {
-        PFQuery *query = [PFQuery queryWithClassName:@"RowsNumber"];
-        PFObject *rowsNumberObject = [query getFirstObject];
-        int rowsNumber = [rowsNumberObject[@"rowsNumber"] intValue] + 1;
-        rowsNumberObject[@"rowsNumber"] = [NSNumber numberWithInt:rowsNumber];
-        _studentObject[rowIdKey] = [NSNumber numberWithInt:rowsNumber];
-        
-        [rowsNumberObject save];
-    }
+//    if (!_studentObject[rowIdKey]) {
+//        PFQuery *query = [PFQuery queryWithClassName:@"RowsNumber"];
+//        PFObject *rowsNumberObject = [query getFirstObject];
+//        int rowsNumber = [rowsNumberObject[@"rowsNumber"] intValue] + 1;
+//        rowsNumberObject[@"rowsNumber"] = [NSNumber numberWithInt:rowsNumber];
+//        _studentObject[rowIdKey] = [NSNumber numberWithInt:rowsNumber];
+//        
+//        [rowsNumberObject save];
+//    }
     [_studentObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             [_delegate didCompleteWithObject:_studentObject];
