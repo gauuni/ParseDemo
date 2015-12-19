@@ -9,8 +9,6 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
-#import "NameGenerator.h"
-#import "AFHTTPSessionManager.h"
 
 @interface AppDelegate ()
 
@@ -26,20 +24,7 @@
     
     [Parse setApplicationId:@"MrV2hSyWRy75KxDf72LzqzaM9vYkLN6NXAPkSHw9"
                   clientKey:@"k3FHlW9WVwNe2N5ViQAfK1cVvpQWFaj4QYec54dH"];
-    
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    
-    NSURL *URL = [NSURL URLWithString:@"http://lorempixel.com/400/200/"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    
-    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
-        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
-    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
-        NSLog(@"File downloaded to: %@", filePath);
-    }];
-    [downloadTask resume];
+
     
     return YES;
 }
