@@ -118,7 +118,7 @@
 			}
 		}
 
-		[syllableRows release];
+//		[syllableRows release];
 
 		NSString *titlePath = [bundle pathForResource:@"title" ofType:@"csv"];
 		NSString *titleFile = [NSString stringWithContentsOfFile:titlePath usedEncoding:&encoding error:&error];
@@ -180,7 +180,7 @@
 			}
 		}
 
-		[titleRows release];
+//		[titleRows release];
 
 		NSString *namePath = [bundle pathForResource:@"name" ofType:@"csv"];
 		NSString *nameFile = [NSString stringWithContentsOfFile:namePath usedEncoding:&encoding error:&error];
@@ -217,7 +217,7 @@
 			}
 		}
 
-		[nameRows release];
+//		[nameRows release];
 	}
 	return self;
 }
