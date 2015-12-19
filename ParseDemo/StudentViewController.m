@@ -47,7 +47,7 @@
     [self setUpHandlerForPullToRefreshWithTableView:self.tableView];
     
     //Get first page
-    [self.tableView triggerPullToRefresh];
+    [self fetchNewData];
 }
 
 - (void)didReceiveMemoryWarning {
