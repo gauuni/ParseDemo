@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6A94F0201C23C32600099B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F01F1C23C32600099B9A /* main.m */; };
 		6A94F0231C23C32600099B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0221C23C32600099B9A /* AppDelegate.m */; };
-		6A94F0261C23C32600099B9A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0251C23C32600099B9A /* ViewController.m */; };
 		6A94F0291C23C32600099B9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F0271C23C32600099B9A /* Main.storyboard */; };
 		6A94F02B1C23C32600099B9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F02A1C23C32600099B9A /* Assets.xcassets */; };
 		6A94F02E1C23C32600099B9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F02C1C23C32600099B9A /* LaunchScreen.storyboard */; };
@@ -53,6 +52,11 @@
 		6A94F0E81C24EFEE00099B9A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F0DA1C24EFEE00099B9A /* LICENSE */; settings = {ASSET_TAGS = (); }; };
 		6A94F0E91C24EFEE00099B9A /* README in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F0DB1C24EFEE00099B9A /* README */; settings = {ASSET_TAGS = (); }; };
 		6A94F0EA1C24EFEE00099B9A /* UIView+TKGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0DD1C24EFEE00099B9A /* UIView+TKGeometry.m */; settings = {ASSET_TAGS = (); }; };
+		6A94F0F41C24F29F00099B9A /* name.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F0EE1C24F29F00099B9A /* name.csv */; settings = {ASSET_TAGS = (); }; };
+		6A94F0F51C24F29F00099B9A /* NameGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94F0F01C24F29F00099B9A /* NameGenerator.m */; settings = {ASSET_TAGS = (); }; };
+		6A94F0F61C24F29F00099B9A /* README in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F0F11C24F29F00099B9A /* README */; settings = {ASSET_TAGS = (); }; };
+		6A94F0F71C24F29F00099B9A /* syllable.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F0F21C24F29F00099B9A /* syllable.csv */; settings = {ASSET_TAGS = (); }; };
+		6A94F0F81C24F29F00099B9A /* title.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F0F31C24F29F00099B9A /* title.csv */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,8 +81,6 @@
 		6A94F01F1C23C32600099B9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6A94F0211C23C32600099B9A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6A94F0221C23C32600099B9A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6A94F0241C23C32600099B9A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6A94F0251C23C32600099B9A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6A94F0281C23C32600099B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6A94F02A1C23C32600099B9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A94F02D1C23C32600099B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -151,6 +153,12 @@
 		6A94F0DB1C24EFEE00099B9A /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		6A94F0DC1C24EFEE00099B9A /* UIView+TKGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TKGeometry.h"; sourceTree = "<group>"; };
 		6A94F0DD1C24EFEE00099B9A /* UIView+TKGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKGeometry.m"; sourceTree = "<group>"; };
+		6A94F0EE1C24F29F00099B9A /* name.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = name.csv; sourceTree = "<group>"; };
+		6A94F0EF1C24F29F00099B9A /* NameGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameGenerator.h; sourceTree = "<group>"; };
+		6A94F0F01C24F29F00099B9A /* NameGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameGenerator.m; sourceTree = "<group>"; };
+		6A94F0F11C24F29F00099B9A /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		6A94F0F21C24F29F00099B9A /* syllable.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = syllable.csv; sourceTree = "<group>"; };
+		6A94F0F31C24F29F00099B9A /* title.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = title.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,19 +230,13 @@
 				6A94F0661C23C6A500099B9A /* StudentCell */,
 				6A94F0211C23C32600099B9A /* AppDelegate.h */,
 				6A94F0221C23C32600099B9A /* AppDelegate.m */,
-				6A94F0241C23C32600099B9A /* ViewController.h */,
-				6A94F0251C23C32600099B9A /* ViewController.m */,
 				6A94F0271C23C32600099B9A /* Main.storyboard */,
 				6A94F02A1C23C32600099B9A /* Assets.xcassets */,
 				6A94F02C1C23C32600099B9A /* LaunchScreen.storyboard */,
 				6A94F02F1C23C32600099B9A /* Info.plist */,
 				6A94F08D1C24EAD200099B9A /* user-small-icon.png */,
-				6A94F0BF1C24EFEE00099B9A /* Masonry */,
-				6A94F0D91C24EFEE00099B9A /* UIView+TKGeometry */,
+				6A94F0EB1C24F26700099B9A /* Libs */,
 				6A94F0821C23D58200099B9A /* Frameworks */,
-				6A94F08F1C24EED200099B9A /* UIScrollView+BottomRefreshControl */,
-				6A94F05E1C23C54900099B9A /* SVPullToRefresh */,
-				6A94F0511C23C43A00099B9A /* parse-library-1.10.0 */,
 				6A94F01E1C23C32600099B9A /* Supporting Files */,
 			);
 			path = ParseDemo;
@@ -355,8 +357,8 @@
 				6A94F0911C24EED200099B9A /* UIScrollView+BottomRefreshControl.m */,
 			);
 			name = "UIScrollView+BottomRefreshControl";
-			path = "../../../../../../Users/KhoiNguyen/Downloads/CCBottomRefreshControl-master/UIScrollView+BottomRefreshControl";
-			sourceTree = "<group>";
+			path = "/Users/KhoiNguyen/Downloads/CCBottomRefreshControl-master/UIScrollView+BottomRefreshControl";
+			sourceTree = "<absolute>";
 		};
 		6A94F0BF1C24EFEE00099B9A /* Masonry */ = {
 			isa = PBXGroup;
@@ -399,6 +401,40 @@
 				6A94F0DD1C24EFEE00099B9A /* UIView+TKGeometry.m */,
 			);
 			path = "UIView+TKGeometry";
+			sourceTree = "<group>";
+		};
+		6A94F0EB1C24F26700099B9A /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				6A94F0ED1C24F29F00099B9A /* Name Generator */,
+				6A94F0EC1C24F27000099B9A /* BottomRefresh */,
+				6A94F05E1C23C54900099B9A /* SVPullToRefresh */,
+				6A94F0511C23C43A00099B9A /* parse-library-1.10.0 */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		6A94F0EC1C24F27000099B9A /* BottomRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				6A94F0BF1C24EFEE00099B9A /* Masonry */,
+				6A94F0D91C24EFEE00099B9A /* UIView+TKGeometry */,
+				6A94F08F1C24EED200099B9A /* UIScrollView+BottomRefreshControl */,
+			);
+			name = BottomRefresh;
+			sourceTree = "<group>";
+		};
+		6A94F0ED1C24F29F00099B9A /* Name Generator */ = {
+			isa = PBXGroup;
+			children = (
+				6A94F0EE1C24F29F00099B9A /* name.csv */,
+				6A94F0EF1C24F29F00099B9A /* NameGenerator.h */,
+				6A94F0F01C24F29F00099B9A /* NameGenerator.m */,
+				6A94F0F11C24F29F00099B9A /* README */,
+				6A94F0F21C24F29F00099B9A /* syllable.csv */,
+				6A94F0F31C24F29F00099B9A /* title.csv */,
+			);
+			path = "Name Generator";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,12 +540,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A94F0F71C24F29F00099B9A /* syllable.csv in Resources */,
+				6A94F0F61C24F29F00099B9A /* README in Resources */,
 				6A94F0E81C24EFEE00099B9A /* LICENSE in Resources */,
 				6A94F02E1C23C32600099B9A /* LaunchScreen.storyboard in Resources */,
 				6A94F02B1C23C32600099B9A /* Assets.xcassets in Resources */,
+				6A94F0F41C24F29F00099B9A /* name.csv in Resources */,
 				6A94F0881C23EAE800099B9A /* YALSunnyRefreshControl.xib in Resources */,
 				6A94F0291C23C32600099B9A /* Main.storyboard in Resources */,
 				6A94F08E1C24EAD200099B9A /* user-small-icon.png in Resources */,
+				6A94F0F81C24F29F00099B9A /* title.csv in Resources */,
 				6A94F0E91C24EFEE00099B9A /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,7 +579,6 @@
 				6A94F0641C23C54900099B9A /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				6A94F0691C23C6BD00099B9A /* StudentCell.m in Sources */,
 				6A94F0921C24EED200099B9A /* UIScrollView+BottomRefreshControl.m in Sources */,
-				6A94F0261C23C32600099B9A /* ViewController.m in Sources */,
 				6A94F0231C23C32600099B9A /* AppDelegate.m in Sources */,
 				6A94F0E71C24EFEE00099B9A /* ViewController+MASAdditions.m in Sources */,
 				6A94F0E21C24EFEE00099B9A /* MASViewAttribute.m in Sources */,
@@ -553,6 +592,7 @@
 				6A94F0E11C24EFEE00099B9A /* MASLayoutConstraint.m in Sources */,
 				6A94F0E41C24EFEE00099B9A /* NSArray+MASAdditions.m in Sources */,
 				6A94F0871C23EAE800099B9A /* YALSunnyRefreshControl.m in Sources */,
+				6A94F0F51C24F29F00099B9A /* NameGenerator.m in Sources */,
 				6A94F0651C23C54900099B9A /* UIScrollView+SVPullToRefresh.m in Sources */,
 				6A94F08C1C23EDDF00099B9A /* StudentDetailViewController.m in Sources */,
 				6A94F0E31C24EFEE00099B9A /* MASViewConstraint.m in Sources */,
@@ -787,6 +827,7 @@
 				6A94F04A1C23C32600099B9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6A94F04B1C23C32600099B9A /* Build configuration list for PBXNativeTarget "ParseDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -795,6 +836,7 @@
 				6A94F04D1C23C32600099B9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6A94F04E1C23C32600099B9A /* Build configuration list for PBXNativeTarget "ParseDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -803,6 +845,7 @@
 				6A94F0501C23C32600099B9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
